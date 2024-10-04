@@ -23,23 +23,29 @@ h1 {
 /* nav styles */
 
 .hamburger {
-  padding-right: 20px;
+  padding-top: 0.3rem;
   cursor: pointer;
+  border: none;
+  background-color: transparent;
+}
+
+.hamburger:hover {
+  background-color: #ededed;
 }
 
 .hamburger .line {
   display: block;
-  width: 40px;
-  height: 5px;
-  margin-bottom: 10px;
-  background-color: #ff9776;
+  width: 1.4rem;
+  height: 2px;
+  margin-bottom: 4px;
+  background-color: #000000;
 }
 
 .nav-links {
   width: 100%;
   top: 5rem;
   left: 48px;
-  background-color: #ff9776;
+  background-color: #ededed;
   display: none;
   margin: 0;
 }
@@ -56,7 +62,7 @@ h1 {
 
 .nav-links a:hover,
 .nav-links a:focus {
-  background-color: #ff9776;
+  background-color: #ededed;
 }
 
 .expanded {
@@ -65,7 +71,6 @@ h1 {
 
 @media screen and (min-width: 636px) {
   .nav-links {
-    margin-left: 2em;
     display: block;
     position: static;
     width: auto;
@@ -80,3 +85,11 @@ h1 {
     display: none;
   }
 }
+
+/* footer styles */
+
+footer {
+  background-color: #ededed;
+  padding: 0.1rem 1rem 1rem 1rem;
+}
+
