@@ -22,7 +22,10 @@ h1 {
 
 /* nav styles */
 
+
+
 .hamburger {
+  margin-top: 1rem;
   padding-top: 0.3rem;
   cursor: pointer;
   border: none;
