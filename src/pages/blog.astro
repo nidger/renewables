@@ -1,18 +1,10 @@
 ---
-import Navigation from '../components/Navigation.astro';
-import Footer from '../components/Footer.astro';
-import Header from '../components/Header.astro';
-import "../styles/global.css";
+import BaseLayout from '../layouts/BaseLayout.astro';
+const pageTitle = "Renewables Blog";
 ---
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width" />
-    <title>Renewables</title>
-  </head>
-  <body>
-    <Header />
-<h1>Blog</h1>
+
+<BaseLayout>
+<h1>{pageTitle}</h1>
 <h2>... and my new Renewables blog</h2>
 
 <ul>
@@ -20,9 +12,4 @@ import "../styles/global.css";
   <li><a href="/posts/post-2/">Post 2</a></li>
   <li><a href="/posts/post-3/">Post 3</a></li>
 </ul>
-<Footer />
-<script>
-	import '../scripts/menu.js';
-</script>
-</body>
-</html>
+</BaseLayout>

@@ -1,0 +1,9 @@
+---
+const { frontmatter } = Astro.props;
+---
+<h1>{frontmatter.title}</h1>
+<p><strong>Published on:</strong> {frontmatter.pubDate.toString().slice(0,10)}</p>
+<p><strong>Written by:</strong> {frontmatter.author}</p>
+<p><strong>Description:</strong> <em>{frontmatter.description}</em></p>
+<slot />
+ 
