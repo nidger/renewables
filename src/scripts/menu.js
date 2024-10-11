@@ -1,10 +1,8 @@
 const hamburger = document.querySelector('.hamburger');
 const navLinks = document.querySelector('.nav-links');
 const links = navLinks.querySelectorAll('a');
-const themeIcon = document.querySelector('.theme-icon'); // Add this line
 
 hamburger.addEventListener('click', toggleMenu);
-themeIcon.addEventListener('click', toggleTheme); // Add this line if not already present
 
 document.addEventListener('keydown', (event) => {
     if (event.key === 'Escape' && navLinks.classList.contains('expanded')) {
@@ -21,10 +19,6 @@ function toggleMenu() {
         // Set focus to the first link in the menu
         links[0].focus();
     }
-}
-
-function toggleTheme() {
-    // Implement theme toggling logic here
 }
 
 // Handle focus for the last link
