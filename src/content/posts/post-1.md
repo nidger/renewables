@@ -1,5 +1,4 @@
 ---
-layout: ../../layouts/MarkdownPostLayout.astro
 title: The best first blog post about Renewable Energy
 pubDate: 2024-07-01
 description: 'This is the first post of my new Astro blog.'
