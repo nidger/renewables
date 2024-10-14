@@ -1,57 +1,45 @@
-const hamburger = document.querySelector('.hamburger');
-const navLinks = document.querySelector('.nav-links');
-const links = navLinks.querySelectorAll('a');
-
-hamburger.addEventListener('click', toggleMenu);
-
-document.addEventListener('keydown', (event) => {
-    if (event.key === 'Escape' && navLinks.classList.contains('expanded')) {
-        toggleMenu();
-        hamburger.focus();
-    }
-});
-
-function toggleMenu() {
-    const isExpanded = navLinks.classList.toggle('expanded');
-    hamburger.setAttribute('aria-expanded', isExpanded);
-    
-    if (isExpanded) {
+document.addEventListener('astro:page-load', () => {
+    const hamburger = document.querySelector('.hamburger');
+    const navLinks = document.querySelector('.nav-links');
+    const links = navLinks.querySelectorAll('a');
+  
+    function toggleMenu() {
+      const isExpanded = navLinks.classList.toggle('expanded');
+      hamburger.setAttribute('aria-expanded', isExpanded);
+      
+      if (isExpanded) {
         // Set focus to the first link in the menu
         links[0].focus();
+      }
     }
-}
-
-// Handle focus for the last link
-const lastLink = links[links.length - 1];
-lastLink.addEventListener('keydown', (event) => {
-    if (event.key === 'Tab' && !event.shiftKey) {
+  
+    hamburger.addEventListener('click', toggleMenu);
+  
+    document.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape' && navLinks.classList.contains('expanded')) {
+        toggleMenu();
+        hamburger.focus();
+      }
+    });
+  
+    // Handle focus for the last link
+    const lastLink = links[links.length - 1];
+    lastLink.addEventListener('keydown', (event) => {
+      if (event.key === 'Tab' && !event.shiftKey) {
         if (window.innerWidth <= 636) { // Adjust this value based on your mobile breakpoint
-            event.preventDefault();
-            hamburger.focus();
+          event.preventDefault();
+          hamburger.focus();
         }
-    }
-});
-
-// Add event listener for the first link to handle Shift+Tab
-links[0].addEventListener('keydown', (event) => {
-    if (event.key === 'Tab' && event.shiftKey) {
+      }
+    });
+  
+    // Add event listener for the first link to handle Shift+Tab
+    links[0].addEventListener('keydown', (event) => {
+      if (event.key === 'Tab' && event.shiftKey) {
         if (window.innerWidth <= 636) {
-            event.preventDefault();
-            hamburger.focus();
+          event.preventDefault();
+          hamburger.focus();
         }
-    }
-});
-
-// Function to find the next focusable element (unused in this version)
-function findNextFocusableElement(element) {
-    const focusableElements = 'a, button, input, select, textarea, [tabindex]:not([tabindex="-1"])';
-    let nextElement = element.nextElementSibling;
-    while (nextElement) {
-        const focusable = nextElement.querySelectorAll(focusableElements);
-        if (focusable.length > 0) {
-            return focusable[0];
-        }
-        nextElement = nextElement.nextElementSibling;
-    }
-    return null;
-}
+      }
+    });
+  });
