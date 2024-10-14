@@ -2,6 +2,12 @@ const hamburger = document.querySelector('.hamburger');
 const navLinks = document.querySelector('.nav-links');
 const links = navLinks.querySelectorAll('a');
 
+document.addEventListener('astro:page-load', () => {
+    document.querySelector('.hamburger').addEventListener('click', () => {
+      document.querySelector('.nav-links').classList.toggle('expanded');
+    });
+  });
+
 hamburger.addEventListener('click', toggleMenu);
 
 document.addEventListener('keydown', (event) => {
