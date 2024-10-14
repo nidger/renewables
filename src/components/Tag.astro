@@ -7,6 +7,7 @@ const { tag } = Astro.props;
 </a>
 
 <style>
+
   .tag {
     display: inline-block;
     margin: 0.25em;
@@ -21,4 +22,15 @@ const { tag } = Astro.props;
   .tag:hover {
     background-color: #f1f5f9;
   }
+
+  /* Dark Mode Styling */
+
+ html.dark .tag {
+  background-color: #1c1c2c;
+}
+
+html.dark .tag:hover {
+    background-color: #32324f;
+  }
+
 </style>

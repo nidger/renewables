@@ -12,14 +12,23 @@
  #themeToggle {
   padding-top: 0.25rem;
   border: 0;
-  background: none;
+  background:none;
+  cursor: pointer;
+ }
+
+ #themeToggle:hover {
+  background: #ededed;
  }
 
  .sun { fill: black; }
  .moon { fill: transparent; }
 
  :global(.dark) .sun { fill: transparent; }
- :global(.dark) .moon { fill: white; }
+ :global(.dark) .moon { fill: #add4ec; }
+
+ html.dark #themeToggle:hover {
+  background: #32324f;
+ }
 
 </style>
 

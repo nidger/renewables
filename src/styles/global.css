@@ -3,11 +3,6 @@ html {
   font-family: sans-serif;
 }
 
-html.dark {
-  background-color: #15151d;
-  color: #fff;
-}
-
 
 body {
   margin: 0 auto;
@@ -80,9 +75,6 @@ display: block;
 padding-top: 1.6rem;
 }
 
-.dark .nav-links a {
-  color: #fff;
-}
 
 .nav-links a {
   display: block;
@@ -143,3 +135,48 @@ footer {
   margin-top: 1.2rem;
 }
 
+/* dark mode styling */
+
+html.dark {
+  background-color: #15151d;
+  color: #add4ec;
+}
+
+.dark .nav-links a {
+  color: #add4ec;
+}
+
+html.dark footer {
+  background-color: #1c1c2c;
+  /* other dark mode styles */
+}
+
+html.dark a {
+  color: #7f87dc;
+}
+
+html.dark .nav-links a:hover,
+html.dark .nav-links a:focus {
+  background-color: #1c1c2c;
+}
+
+
+
+html.dark .nav-links a:hover,
+html.dark .nav-links a:focus {
+  background-color: #32324f;
+}
+
+
+html.dark .nav-links {
+  background-color: #15151d;
+}
+
+
+html.dark .hamburger .line {
+  background-color: #add4ec;
+}
+
+html.dark .hamburger:hover {
+  background-color: #32324f;
+}
