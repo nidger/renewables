@@ -7,10 +7,35 @@ const { pageTitle } = Astro.props;
 ---
 <html lang="en">
   <head>
-    <ViewTransitions />
+    <script is:inline>
+      function getTheme() {
+        if (typeof localStorage !== 'undefined' && localStorage.getItem('theme')) {
+          return localStorage.getItem('theme');
+        }
+        if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+          return 'dark';
+        }
+        return 'light';
+      }
+
+      function setTheme(theme) {
+        if (theme === 'dark') {
+          document.documentElement.classList.add('dark');
+        } else {
+          document.documentElement.classList.remove('dark');
+        }
+        localStorage.setItem('theme', theme);
+      }
+
+      setTheme(getTheme());
+
+      document.addEventListener('astro:after-swap', () => setTheme(getTheme()));
+    </script>
+    
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{pageTitle}</title>
+    <ViewTransitions />
   </head>
   <body>
     <Header />
