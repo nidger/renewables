@@ -1,0 +1,129 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+const pageTitle = "Style Guide";
+---
+
+<BaseLayout pageTitle = {pageTitle}>
+<p>This is a visual representation of the styles in use on this website.<br>Hope it helps!</p>
+<style>
+  .color-swatch {
+      width: 100px;
+      height: 100px;
+      display: inline-block;
+      margin: 10px;
+      border: 1px solid #000;
+  }
+  .spacing-demo {
+      background-color: #e0e0e0;
+      display: inline-block;
+      margin: 10px;
+  }
+</style>
+</head>
+  <body>
+    <section>
+      <h2>Colors</h2>
+      <div>
+          <div class="color-swatch" style="background-color: var(--color-background-primary);"></div>
+          <p>Background Primary</p>
+      </div>
+      <div>
+          <div class="color-swatch" style="background-color: var(--color-background-secondary);"></div>
+          <p>Background Secondary</p>
+      </div>
+      <div>
+          <div class="color-swatch" style="background-color: var(--color-text); color: white;"></div>
+          <p>Text Color</p>
+      </div>
+      <div>
+          <div class="color-swatch" style="background-color: var(--color-dark-background-primary);"></div>
+          <p>Dark Background Primary</p>
+      </div>
+      <div>
+          <div class="color-swatch" style="background-color: var(--color-dark-background-secondary);"></div>
+          <p>Dark Background Secondary</p>
+      </div>
+      <div>
+          <div class="color-swatch" style="background-color: var(--color-dark-text-primary); color: black;"></div>
+          <p>Dark Text Primary</p>
+      </div>
+      <div>
+          <div class="color-swatch" style="background-color: var(--color-dark-text-secondary); color: black;"></div>
+          <p>Dark Text Secondary</p>
+      </div>
+</section>
+
+<section>
+  <h2>Typography</h2>
+  <h1>Heading 1</h1>
+  <h2>Heading 2</h2>
+  <h3>Heading 3</h3>
+  <h4>Heading 4</h4>
+  <h5>Heading 5</h5>
+  <h6>Heading 6</h6>
+  <p>Regular paragraph text</p>
+  <p><small>Small text</small></p>
+  <p class="text-large">Large text</p>
+  <p class="heading-large-aggressive">Aggressively scaling large heading</p>
+</section>
+
+<section>
+  <h2>Spacing</h2>
+  <div class="spacing-demo" style="width: var(--space-3xs); height: var(--space-3xs);"></div>
+  <p>3XS</p>
+  <div class="spacing-demo" style="width: var(--space-2xs); height: var(--space-2xs);"></div>
+  <p>2XS</p>
+  <div class="spacing-demo" style="width: var(--space-xs); height: var(--space-xs);"></div>
+  <p>XS</p>
+  <div class="spacing-demo" style="width: var(--space-s); height: var(--space-s);"></div>
+  <p>S</p>
+  <div class="spacing-demo" style="width: var(--space-m); height: var(--space-m);"></div>
+  <p>M</p>
+  <div class="spacing-demo" style="width: var(--space-l); height: var(--space-l);"></div>
+  <p>L</p>
+  <div class="spacing-demo" style="width: var(--space-xl); height: var(--space-xl);"></div>
+  <p>XL</p>
+  <div class="spacing-demo" style="width: var(--space-2xl); height: var(--space-2xl);"></div>
+  <p>2XL</p>
+  <div class="spacing-demo" style="width: var(--space-3xl); height: var(--space-3xl);"></div>
+  <p>3XL</p>
+</section>
+
+<section>
+  <h2>Custom Spacing Pairs</h2>
+  <div class="spacing-demo" style="width: var(--space-3xs-2xs); height: 20px;"></div>
+  <p>3XS-2XS</p>
+  <div class="spacing-demo" style="width: var(--space-2xs-xs); height: 20px;"></div>
+  <p>2XS-XS</p>
+  <div class="spacing-demo" style="width: var(--space-xs-s); height: 20px;"></div>
+  <p>XS-S</p>
+  <div class="spacing-demo" style="width: var(--space-s-m); height: 20px;"></div>
+  <p>S-M</p>
+  <div class="spacing-demo" style="width: var(--space-m-l); height: 20px;"></div>
+  <p>M-L</p>
+  <div class="spacing-demo" style="width: var(--space-l-xl); height: 20px;"></div>
+  <p>L-XL</p>
+  <div class="spacing-demo" style="width: var(--space-xl-2xl); height: 20px;"></div>
+  <p>XL-2XL</p>
+  <div class="spacing-demo" style="width: var(--space-2xl-3xl); height: 20px;"></div>
+  <p>2XL-3XL</p>
+  <div class="spacing-demo" style="width: var(--space-s-l); height: 20px;"></div>
+  <p>S-L</p>
+</section>
+
+<section>
+  <h2>Other Elements</h2>
+  <button>Button</button>
+  <a href="#">Link</a>
+  <ul>
+      <li>Unordered list item 1</li>
+      <li>Unordered list item 2</li>
+  </ul>
+  <ol>
+      <li>Ordered list item 1</li>
+      <li>Ordered list item 2</li>
+  </ol>
+</section>
+</body>
+</html>
+</BaseLayout>
