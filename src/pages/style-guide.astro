@@ -6,51 +6,66 @@ const pageTitle = "Style Guide";
 <BaseLayout pageTitle = {pageTitle}>
 <p>This is a visual representation of the styles in use on this website.<br>Hope it helps!</p>
 <style>
+  .color-swatches, .spacing-demos {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+  }
   .color-swatch {
       width: 100px;
       height: 100px;
-      display: inline-block;
-      margin: 10px;
       border: 1px solid #000;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+  }
+  .color-swatch span {
+    font-size: var(--step--1);
   }
   .spacing-demo {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+  }
+  .spacing-box {
       background-color: #e0e0e0;
-      display: inline-block;
-      margin: 10px;
+      height: 50px;
+      width: 100%;
+  }
+  .spacing-label {
+      margin-top: 5px;
+      font-size: var(--step--1);
+      text-align: center;
   }
 </style>
-</head>
-  <body>
-    <section>
-      <h2>Colors</h2>
-      <div>
-          <div class="color-swatch" style="background-color: var(--color-background-primary);"></div>
-          <p>Background Primary</p>
+
+<section>
+  <h2>Colors</h2>
+  <div class="color-swatches">
+      <div class="color-swatch" style="background-color: var(--color-background-primary);">
+          <span>Background Primary</span>
       </div>
-      <div>
-          <div class="color-swatch" style="background-color: var(--color-background-secondary);"></div>
-          <p>Background Secondary</p>
+      <div class="color-swatch" style="background-color: var(--color-background-secondary);">
+          <span>Background Secondary</span>
       </div>
-      <div>
-          <div class="color-swatch" style="background-color: var(--color-text); color: white;"></div>
-          <p>Text Color</p>
+      <div class="color-swatch" style="background-color: var(--color-text); color: white;">
+          <span>Text Color</span>
       </div>
-      <div>
-          <div class="color-swatch" style="background-color: var(--color-dark-background-primary);"></div>
-          <p>Dark Background Primary</p>
+      <div class="color-swatch" style="background-color: var(--color-dark-background-primary); color: white;">
+          <span>Dark Background Primary</span>
       </div>
-      <div>
-          <div class="color-swatch" style="background-color: var(--color-dark-background-secondary);"></div>
-          <p>Dark Background Secondary</p>
+      <div class="color-swatch" style="background-color: var(--color-dark-background-secondary); color: white;">
+          <span>Dark Background Secondary</span>
       </div>
-      <div>
-          <div class="color-swatch" style="background-color: var(--color-dark-text-primary); color: black;"></div>
-          <p>Dark Text Primary</p>
+      <div class="color-swatch" style="background-color: var(--color-dark-text-primary);">
+          <span>Dark Text Primary</span>
       </div>
-      <div>
-          <div class="color-swatch" style="background-color: var(--color-dark-text-secondary); color: black;"></div>
-          <p>Dark Text Secondary</p>
+      <div class="color-swatch" style="background-color: var(--color-dark-text-secondary);">
+          <span>Dark Text Secondary</span>
       </div>
+  </div>
 </section>
 
 <section>
@@ -69,46 +84,102 @@ const pageTitle = "Style Guide";
 
 <section>
   <h2>Spacing</h2>
-  <div class="spacing-demo" style="width: var(--space-3xs); height: var(--space-3xs);"></div>
-  <p>3XS</p>
-  <div class="spacing-demo" style="width: var(--space-2xs); height: var(--space-2xs);"></div>
-  <p>2XS</p>
-  <div class="spacing-demo" style="width: var(--space-xs); height: var(--space-xs);"></div>
-  <p>XS</p>
-  <div class="spacing-demo" style="width: var(--space-s); height: var(--space-s);"></div>
-  <p>S</p>
-  <div class="spacing-demo" style="width: var(--space-m); height: var(--space-m);"></div>
-  <p>M</p>
-  <div class="spacing-demo" style="width: var(--space-l); height: var(--space-l);"></div>
-  <p>L</p>
-  <div class="spacing-demo" style="width: var(--space-xl); height: var(--space-xl);"></div>
-  <p>XL</p>
-  <div class="spacing-demo" style="width: var(--space-2xl); height: var(--space-2xl);"></div>
-  <p>2XL</p>
-  <div class="spacing-demo" style="width: var(--space-3xl); height: var(--space-3xl);"></div>
-  <p>3XL</p>
+  <div class="spacing-demos">
+      <div class="spacing-demo">
+          <div class="spacing-box" style="width: var(--space-3xs);"></div>
+          <span class="spacing-label">3XS</span>
+      </div>
+      <div class="spacing-demo">
+          <div class="spacing-box" style="width: var(--space-2xs);"></div>
+          <span class="spacing-label">2XS</span>
+      </div>
+      <div class="spacing-demo">
+          <div class="spacing-box" style="width: var(--space-xs);"></div>
+          <span class="spacing-label">XS</span>
+      </div>
+      <div class="spacing-demo">
+          <div class="spacing-box" style="width: var(--space-s);"></div>
+          <span class="spacing-label">S</span>
+      </div>
+      <div class="spacing-demo">
+          <div class="spacing-box" style="width: var(--space-m);"></div>
+          <span class="spacing-label">M</span>
+      </div>
+      <div class="spacing-demo">
+          <div class="spacing-box" style="width: var(--space-l);"></div>
+          <span class="spacing-label">L</span>
+      </div>
+      <div class="spacing-demo">
+          <div class="spacing-box" style="width: var(--space-xl);"></div>
+          <span class="spacing-label">XL</span>
+      </div>
+      <div class="spacing-demo">
+          <div class="spacing-box" style="width: var(--space-2xl);"></div>
+          <span class="spacing-label">2XL</span>
+      </div>
+      <div class="spacing-demo">
+          <div class="spacing-box" style="width: var(--space-3xl);"></div>
+          <span class="spacing-label">3XL</span>
+      </div>
+      <div class="spacing-demo">
+          <div class="spacing-box" style="width: var(--space-4xl);"></div>
+          <span class="spacing-label">4XL</span>
+      </div>
+      <div class="spacing-demo">
+          <div class="spacing-box" style="width: var(--space-5xl);"></div>
+          <span class="spacing-label">5XL</span>
+      </div>
+  </div>
 </section>
 
 <section>
   <h2>Custom Spacing Pairs</h2>
-  <div class="spacing-demo" style="width: var(--space-3xs-2xs); height: 20px;"></div>
-  <p>3XS-2XS</p>
-  <div class="spacing-demo" style="width: var(--space-2xs-xs); height: 20px;"></div>
-  <p>2XS-XS</p>
-  <div class="spacing-demo" style="width: var(--space-xs-s); height: 20px;"></div>
-  <p>XS-S</p>
-  <div class="spacing-demo" style="width: var(--space-s-m); height: 20px;"></div>
-  <p>S-M</p>
-  <div class="spacing-demo" style="width: var(--space-m-l); height: 20px;"></div>
-  <p>M-L</p>
-  <div class="spacing-demo" style="width: var(--space-l-xl); height: 20px;"></div>
-  <p>L-XL</p>
-  <div class="spacing-demo" style="width: var(--space-xl-2xl); height: 20px;"></div>
-  <p>XL-2XL</p>
-  <div class="spacing-demo" style="width: var(--space-2xl-3xl); height: 20px;"></div>
-  <p>2XL-3XL</p>
-  <div class="spacing-demo" style="width: var(--space-s-l); height: 20px;"></div>
-  <p>S-L</p>
+  <div class="spacing-demos">
+      <div class="spacing-demo">
+          <div class="spacing-box" style="width: var(--space-3xs-2xs);"></div>
+          <span class="spacing-label">3XS-2XS</span>
+      </div>
+      <div class="spacing-demo">
+          <div class="spacing-box" style="width: var(--space-2xs-xs);"></div>
+          <span class="spacing-label">2XS-XS</span>
+      </div>
+      <div class="spacing-demo">
+          <div class="spacing-box" style="width: var(--space-xs-s);"></div>
+          <span class="spacing-label">XS-S</span>
+      </div>
+      <div class="spacing-demo">
+          <div class="spacing-box" style="width: var(--space-s-m);"></div>
+          <span class="spacing-label">S-M</span>
+      </div>
+      <div class="spacing-demo">
+          <div class="spacing-box" style="width: var(--space-m-l);"></div>
+          <span class="spacing-label">M-L</span>
+      </div>
+      <div class="spacing-demo">
+          <div class="spacing-box" style="width: var(--space-l-xl);"></div>
+          <span class="spacing-label">L-XL</span>
+      </div>
+      <div class="spacing-demo">
+          <div class="spacing-box" style="width: var(--space-xl-2xl);"></div>
+          <span class="spacing-label">XL-2XL</span>
+      </div>
+      <div class="spacing-demo">
+          <div class="spacing-box" style="width: var(--space-2xl-3xl);"></div>
+          <span class="spacing-label">2XL-3XL</span>
+      </div>
+      <div class="spacing-demo">
+          <div class="spacing-box" style="width: var(--space-3xl-4xl);"></div>
+          <span class="spacing-label">3XL-4XL</span>
+      </div>
+      <div class="spacing-demo">
+          <div class="spacing-box" style="width: var(--space-4xl-5xl);"></div>
+          <span class="spacing-label">4XL-5XL</span>
+      </div>
+      <div class="spacing-demo">
+          <div class="spacing-box" style="width: var(--space-s-l);"></div>
+          <span class="spacing-label">S-L</span>
+      </div>
+  </div>
 </section>
 
 <section>
@@ -124,6 +195,4 @@ const pageTitle = "Style Guide";
       <li>Ordered list item 2</li>
   </ol>
 </section>
-</body>
-</html>
 </BaseLayout>
