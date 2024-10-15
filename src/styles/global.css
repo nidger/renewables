@@ -68,6 +68,11 @@
 
   /* Layout */
   --content-max-width: 1366px;
+
+  /* New Grid variables */
+  --grid-max-width: var(--content-max-width);
+  --grid-gutter: var(--space-s-l);
+  --grid-columns: 12;
 }
 
 /* Base styles */
@@ -280,4 +285,19 @@ html.dark .hamburger:hover {
   #themeToggle {
     margin-top: var(--space-xs);
   }
+}
+
+/* New Grid utility classes */
+.u-container {
+  max-width: var(--grid-max-width);
+  margin-inline: auto;
+}
+
+.u-grid {
+  display: grid;
+  gap: var(--grid-gutter);
+}
+
+.u-grid-12 {
+  grid-template-columns: repeat(var(--grid-columns), 1fr);
 }
