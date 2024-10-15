@@ -41,6 +41,18 @@
   /* Custom pairs */
   --space-s-l: clamp(1rem, 0.6154rem + 1.9231vw, 2.25rem);
 
+  /* Color variables */
+  --color-background-primary: #f1f5f9;
+  --color-background-secondary: #ededed;
+  --color-text: #000000;
+
+  --color-dark-background-primary: #15151d;
+  --color-dark-background-secondary: #1c1c2c;
+  --color-dark-text-primary: #add4ec;
+  --color-dark-text-secondary: #7f87dc;
+
+  --color-hamburger-line: currentColor;
+
   /* Other variables */
   --font-family-sans: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   --line-height-tight: 1.1;
@@ -57,7 +69,8 @@
 /* Base styles */
 html {
   font-size: 100%;  /* This ensures that 1rem = 16px */
-  background-color: #f1f5f9;
+  background-color: var(--color-background-primary);
+  color: var(--color-text);
   font-family: var(--font-family-sans);
   line-height: var(--line-height-normal);
 }
@@ -81,7 +94,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 {
-  font-size: var(--step-large-aggressive);
+  font-size: var(--step-5);
   margin: var(--space-s) 0;
 }
 
@@ -146,7 +159,7 @@ nav {
 }
 
 .hamburger:hover {
-  background-color: #ededed;
+  background-color: var(--color-background-secondary);
 }
 
 .hamburger .line {
@@ -154,14 +167,14 @@ nav {
   width: 1.4rem;
   height: 2px;
   margin-bottom: var(--space-3xs);
-  background-color: #000000;
+  background-color: var(--color-hamburger-line);
 }
 
 .nav-links {
   width: 100%;
   top: var(--space-xl);
   left: var(--space-l);
-  background-color: #ededed;
+  background-color: var(--color-background-secondary);
   display: none;
   margin: 0;
 }
@@ -183,7 +196,7 @@ nav {
 
 .nav-links a:hover,
 .nav-links a:focus {
-  background-color: #ededed;
+  background-color: var(--color-background-secondary);
 }
 
 .expanded {
@@ -192,44 +205,44 @@ nav {
 
 /* Footer styles */
 footer {
-  background-color: #ededed;
+  background-color: var(--color-background-secondary);
   padding: var(--space-3xs) var(--space-s) var(--space-s) var(--space-s);
   margin-top: var(--space-s);
 }
 
 /* Dark mode styling */
 html.dark {
-  background-color: #15151d;
-  color: #add4ec;
+  background-color: var(--color-dark-background-primary);
+  color: var(--color-dark-text-primary);
 }
 
 .dark .nav-links a {
-  color: #add4ec;
+  color: var(--color-dark-text-primary);
 }
 
 html.dark footer {
-  background-color: #1c1c2c;
+  background-color: var(--color-dark-background-secondary);
 }
 
 html.dark a {
-  color: #7f87dc;
+  color: var(--color-dark-text-secondary);
 }
 
 html.dark .nav-links a:hover,
 html.dark .nav-links a:focus {
-  background-color: #32324f;
+  background-color: var(--color-dark-background-secondary);
 }
 
 html.dark .nav-links {
-  background-color: #15151d;
+  background-color: var(--color-dark-background-primary);
 }
 
 html.dark .hamburger .line {
-  background-color: #add4ec;
+  background-color: var(--color-dark-text-primary);
 }
 
 html.dark .hamburger:hover {
-  background-color: #32324f;
+  background-color: var(--color-dark-background-secondary);
 }
 
 /* Responsive styles */
