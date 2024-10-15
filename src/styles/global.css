@@ -1,39 +1,158 @@
-html {
-  background-color: #f1f5f9;
-  font-family: sans-serif;
+/* Fluid typography variables */
+:root {
+  --fluid-min-width: 320px;
+  --fluid-max-width: 1366px;
+
+  /* Typography */
+  --step--2: clamp(0.5628rem, 0.5411rem + 0.1082vw, 0.6331rem);
+  --step--1: clamp(0.7502rem, 0.7213rem + 0.1443vw, 0.844rem);
+  --step-0: clamp(1rem, 0.9615rem + 0.1923vw, 1.125rem);
+  --step-1: clamp(1.333rem, 1.2817rem + 0.2563vw, 1.4996rem);
+  --step-2: clamp(1.7769rem, 1.7085rem + 0.3417vw, 1.999rem);
+  --step-3: clamp(2.3686rem, 2.2775rem + 0.4555vw, 2.6647rem);
+  --step-4: clamp(3.1573rem, 3.0359rem + 0.6072vw, 3.552rem);
+  --step-5: clamp(4.2087rem, 4.0469rem + 0.8094vw, 4.7348rem);
+  --step-6: clamp(5.6102rem, 5.3945rem + 1.0789vw, 6.3115rem);
+
+  /* New aggressively scaling large heading */
+  --step-large-aggressive: clamp(2.5rem, 1.5rem + 5vw, 6rem);
+
+  /* Fluid spacing variables */
+  --space-3xs: clamp(0.25rem, 0.2308rem + 0.0962vw, 0.3125rem);
+  --space-2xs: clamp(0.5rem, 0.4808rem + 0.0962vw, 0.5625rem);
+  --space-xs: clamp(0.75rem, 0.7115rem + 0.1923vw, 0.875rem);
+  --space-s: clamp(1rem, 0.9615rem + 0.1923vw, 1.125rem);
+  --space-m: clamp(1.5rem, 1.4423rem + 0.2885vw, 1.6875rem);
+  --space-l: clamp(2rem, 1.9231rem + 0.3846vw, 2.25rem);
+  --space-xl: clamp(3rem, 2.8846rem + 0.5769vw, 3.375rem);
+  --space-2xl: clamp(4rem, 3.8462rem + 0.7692vw, 4.5rem);
+  --space-3xl: clamp(6rem, 5.7692rem + 1.1538vw, 6.75rem);
+  --space-4xl: clamp(8rem, 7.6923rem + 1.5385vw, 9rem);
+  --space-5xl: clamp(10rem, 9.6154rem + 1.9231vw, 11.25rem);
+  
+  /* One-up pairs */
+  --space-3xs-2xs: clamp(0.25rem, 0.1538rem + 0.4808vw, 0.5625rem);
+  --space-2xs-xs: clamp(0.5rem, 0.3846rem + 0.5769vw, 0.875rem);
+  --space-xs-s: clamp(0.75rem, 0.6346rem + 0.5769vw, 1.125rem);
+  --space-s-m: clamp(1rem, 0.7885rem + 1.0577vw, 1.6875rem);
+  --space-m-l: clamp(1.5rem, 1.2692rem + 1.1538vw, 2.25rem);
+  --space-l-xl: clamp(2rem, 1.5769rem + 2.1154vw, 3.375rem);
+  --space-xl-2xl: clamp(3rem, 2.5385rem + 2.3077vw, 4.5rem);
+  --space-2xl-3xl: clamp(4rem, 3.1538rem + 4.2308vw, 6.75rem);
+  --space-3xl-4xl: clamp(6rem, 5.0769rem + 4.6154vw, 9rem);
+  --space-4xl-5xl: clamp(8rem, 6.9231rem + 5.3846vw, 11.25rem);
+  
+  /* Custom pairs */
+  --space-s-l: clamp(1rem, 0.6154rem + 1.9231vw, 2.25rem);
+
+  /* Color variables */
+  --color-background-primary: #f1f5f9;
+  --color-background-secondary: #ededed;
+  --color-text: #000000;
+
+  --color-dark-background-primary: #15151d;
+  --color-dark-background-secondary: #1c1c2c;
+  --color-dark-text-primary: #add4ec;
+  --color-dark-text-secondary: #7f87dc;
+
+  --color-hamburger-line: currentColor;
+
+  /* Other variables */
+  --font-family-sans: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  --line-height-tight: 1.1;
+  --line-height-normal: 1.5;
+  --line-height-relaxed: 1.75;
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-bold: 700;
+
+  /* Layout */
+  --content-max-width: 1366px;
+
+  /* New Grid variables */
+  --grid-max-width: var(--content-max-width);
+  --grid-gutter: var(--space-s-l);
+  --grid-columns: 12;
 }
 
+/* Base styles */
+html {
+  font-size: 100%;  /* This ensures that 1rem = 16px */
+  background-color: var(--color-background-primary);
+  color: var(--color-text);
+  font-family: var(--font-family-sans);
+  line-height: var(--line-height-normal);
+}
 
 body {
+  font-size: var(--step-0);
   margin: 0 auto;
   width: 100%;
-  max-width: 80ch;
-  padding: 1rem;
-  line-height: 1.5;
+  max-width: var(--content-max-width);
+  padding: var(--space-s);
 }
 
 * {
   box-sizing: border-box;
 }
 
-h1 {
-  margin: 1rem 0;
-  font-size: 2.5rem;
+/* Typography styles */
+h1, h2, h3, h4, h5, h6 {
+  line-height: var(--line-height-tight);
+  font-weight: var(--font-weight-bold);
 }
 
+h1 {
+  font-size: var(--step-5);
+  margin: var(--space-s) 0;
+}
 
-/* nav styling */
+h2 {
+  font-size: var(--step-3);
+}
 
+h3 {
+  font-size: var(--step-2);
+}
+
+h4 {
+  font-size: var(--step-1);
+}
+
+h5 {
+  font-size: var(--step-0);
+}
+
+h6 {
+  font-size: var(--step--1);
+}
+
+small, .text-small {
+  font-size: var(--step--1);
+}
+
+.text-large {
+  font-size: var(--step-1);
+}
+
+/* New style for the aggressively scaling large heading */
+.heading-large-aggressive {
+  font-size: var(--step-large-aggressive);
+  line-height: var(--line-height-tight);
+  font-weight: var(--font-weight-bold);
+}
+
+/* Nav styling */
 header {
   position: relative;
-  margin-bottom: 3rem;
- }
- 
- .header-buttons {
-   position: absolute;
-   top: 0;
-   right: 0;
- }
+  margin-bottom: var(--space-xl);
+}
+
+.header-buttons {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
 
 nav {
   display: flex;
@@ -41,64 +160,104 @@ nav {
   justify-content: flex-end;
 }
 
-
 .hamburger {
-  padding-top: 0.3rem;
+  padding-top: var(--space-3xs);
   cursor: pointer;
   border: none;
   background-color: transparent;
 }
 
 .hamburger:hover {
-  background-color: #ededed;
+  background-color: var(--color-background-secondary);
 }
 
 .hamburger .line {
   display: block;
   width: 1.4rem;
   height: 2px;
-  margin-bottom: 4px;
-  background-color: #000000;
+  margin-bottom: var(--space-3xs);
+  background-color: var(--color-hamburger-line);
 }
 
 .nav-links {
   width: 100%;
-  top: 5rem;
-  left: 48px;
-  background-color: #ededed;
+  top: var(--space-xl);
+  left: var(--space-l);
+  background-color: var(--color-background-secondary);
   display: none;
   margin: 0;
 }
 
 .nav-links.expanded {
-display: block;
-padding-top: 1.6rem;
+  display: block;
+  padding-top: var(--space-m);
 }
-
 
 .nav-links a {
   display: block;
   text-align: center;
-  padding: 10px 0;
+  padding: var(--space-xs) 0;
   text-decoration: none;
-  font-size: 1.2rem;
-  font-weight: bold;
+  font-size: var(--step-0);
+  font-weight: var(--font-weight-bold);
   text-transform: uppercase;
 }
 
 .nav-links a:hover,
 .nav-links a:focus {
-  background-color: #ededed;
+  background-color: var(--color-background-secondary);
 }
 
 .expanded {
   display: unset;
 }
 
-@media screen and (min-width: 636px) {
+/* Footer styles */
+footer {
+  background-color: var(--color-background-secondary);
+  padding: var(--space-3xs) var(--space-s) var(--space-s) var(--space-s);
+  margin-top: var(--space-s);
+}
 
+/* Dark mode styling */
+html.dark {
+  background-color: var(--color-dark-background-primary);
+  color: var(--color-dark-text-primary);
+}
+
+.dark .nav-links a {
+  color: var(--color-dark-text-primary);
+}
+
+html.dark footer {
+  background-color: var(--color-dark-background-secondary);
+}
+
+html.dark a {
+  color: var(--color-dark-text-secondary);
+}
+
+html.dark .nav-links a:hover,
+html.dark .nav-links a:focus {
+  background-color: var(--color-dark-background-secondary);
+}
+
+html.dark .nav-links {
+  background-color: var(--color-dark-background-primary);
+}
+
+html.dark .hamburger .line {
+  background-color: var(--color-dark-text-primary);
+}
+
+html.dark .hamburger:hover {
+  background-color: var(--color-dark-background-secondary);
+}
+
+/* Responsive styles */
+@media screen and (min-width: 636px) {
   header {
-    margin-bottom: 0px;
+    margin-bottom: 0;
   }
 
   nav {
@@ -116,67 +275,29 @@ padding-top: 1.6rem;
 
   .nav-links a {
     display: inline-block;
-    padding: 15px 20px;
+    padding: var(--space-xs) var(--space-s);
   }
+
   .hamburger {
     display: none;
   }
 
   #themeToggle {
-    margin-top: 0.6rem;
+    margin-top: var(--space-xs);
   }
 }
 
-/* footer styles */
-
-footer {
-  background-color: #ededed;
-  padding: 0.1rem 1rem 1rem 1rem;
-  margin-top: 1.2rem;
+/* New Grid utility classes */
+.u-container {
+  max-width: var(--grid-max-width);
+  margin-inline: auto;
 }
 
-/* dark mode styling */
-
-html.dark {
-  background-color: #15151d;
-  color: #add4ec;
+.u-grid {
+  display: grid;
+  gap: var(--grid-gutter);
 }
 
-.dark .nav-links a {
-  color: #add4ec;
-}
-
-html.dark footer {
-  background-color: #1c1c2c;
-  /* other dark mode styles */
-}
-
-html.dark a {
-  color: #7f87dc;
-}
-
-html.dark .nav-links a:hover,
-html.dark .nav-links a:focus {
-  background-color: #1c1c2c;
-}
-
-
-
-html.dark .nav-links a:hover,
-html.dark .nav-links a:focus {
-  background-color: #32324f;
-}
-
-
-html.dark .nav-links {
-  background-color: #15151d;
-}
-
-
-html.dark .hamburger .line {
-  background-color: #add4ec;
-}
-
-html.dark .hamburger:hover {
-  background-color: #32324f;
+.u-grid-12 {
+  grid-template-columns: repeat(var(--grid-columns), 1fr);
 }
