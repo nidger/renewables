@@ -1,0 +1,236 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+const pageTitle = "Style Guide";
+---
+
+<BaseLayout pageTitle={pageTitle}>
+<p>This is a visual representation of the styles in use on this website.<br>Hope it helps!</p>
+<style>
+  .color-swatches, .spacing-demos {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+  }
+  .color-swatch {
+      width: 100px;
+      height: 100px;
+      border: 1px solid #000;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+  }
+  .color-swatch span {
+    font-size: var(--step--1);
+  }
+  .spacing-demo {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+  }
+  .spacing-box {
+      background-color: var(--color-background-secondary);
+      height: 50px;
+      width: 100%;
+  }
+  .spacing-label {
+      margin-top: 5px;
+      font-size: var(--step--1);
+      text-align: center;
+  }
+  .grid-demo {
+    border: 1px dashed #000;
+    margin-bottom: var(--space-m);
+  }
+  .grid-demo-column {
+    background-color: var(--color-background-secondary);
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: var(--step--1);
+  }
+
+</style>
+
+<section>
+  <h2>Colors</h2>
+  <div class="color-swatches">
+      <div class="color-swatch" style="background-color: var(--color-background-primary);">
+          <span>Background Primary</span>
+      </div>
+      <div class="color-swatch" style="background-color: var(--color-background-secondary);">
+          <span>Background Secondary</span>
+      </div>
+      <div class="color-swatch" style="background-color: var(--color-text); color: white;">
+          <span>Text Color</span>
+      </div>
+      <div class="color-swatch" style="background-color: var(--color-dark-background-primary); color: white;">
+          <span>Dark Background Primary</span>
+      </div>
+      <div class="color-swatch" style="background-color: var(--color-dark-background-secondary); color: white;">
+          <span>Dark Background Secondary</span>
+      </div>
+      <div class="color-swatch" style="background-color: var(--color-dark-text-primary);">
+          <span>Dark Text Primary</span>
+      </div>
+      <div class="color-swatch" style="background-color: var(--color-dark-text-secondary);">
+          <span>Dark Text Secondary</span>
+      </div>
+  </div>
+</section>
+
+<section>
+  <h2>Typography</h2>
+  <h1>Heading 1</h1>
+  <h2>Heading 2</h2>
+  <h3>Heading 3</h3>
+  <h4>Heading 4</h4>
+  <h5>Heading 5</h5>
+  <h6>Heading 6</h6>
+  <p>Regular paragraph text</p>
+  <p><small>Small text</small></p>
+  <p class="text-large">Large text</p>
+  <p class="heading-large-aggressive">Aggressively scaling large heading</p>
+</section>
+
+<section>
+  <h2>Spacing</h2>
+  <div class="spacing-demos">
+      <div class="spacing-demo">
+          <div class="spacing-box" style="width: var(--space-3xs);"></div>
+          <span class="spacing-label">3XS</span>
+      </div>
+      <div class="spacing-demo">
+          <div class="spacing-box" style="width: var(--space-2xs);"></div>
+          <span class="spacing-label">2XS</span>
+      </div>
+      <div class="spacing-demo">
+          <div class="spacing-box" style="width: var(--space-xs);"></div>
+          <span class="spacing-label">XS</span>
+      </div>
+      <div class="spacing-demo">
+          <div class="spacing-box" style="width: var(--space-s);"></div>
+          <span class="spacing-label">S</span>
+      </div>
+      <div class="spacing-demo">
+          <div class="spacing-box" style="width: var(--space-m);"></div>
+          <span class="spacing-label">M</span>
+      </div>
+      <div class="spacing-demo">
+          <div class="spacing-box" style="width: var(--space-l);"></div>
+          <span class="spacing-label">L</span>
+      </div>
+      <div class="spacing-demo">
+          <div class="spacing-box" style="width: var(--space-xl);"></div>
+          <span class="spacing-label">XL</span>
+      </div>
+      <div class="spacing-demo">
+          <div class="spacing-box" style="width: var(--space-2xl);"></div>
+          <span class="spacing-label">2XL</span>
+      </div>
+      <div class="spacing-demo">
+          <div class="spacing-box" style="width: var(--space-3xl);"></div>
+          <span class="spacing-label">3XL</span>
+      </div>
+      <div class="spacing-demo">
+          <div class="spacing-box" style="width: var(--space-4xl);"></div>
+          <span class="spacing-label">4XL</span>
+      </div>
+      <div class="spacing-demo">
+          <div class="spacing-box" style="width: var(--space-5xl);"></div>
+          <span class="spacing-label">5XL</span>
+      </div>
+  </div>
+</section>
+
+<section>
+  <h2>Custom Spacing Pairs</h2>
+  <div class="spacing-demos">
+      <div class="spacing-demo">
+          <div class="spacing-box" style="width: var(--space-3xs-2xs);"></div>
+          <span class="spacing-label">3XS-2XS</span>
+      </div>
+      <div class="spacing-demo">
+          <div class="spacing-box" style="width: var(--space-2xs-xs);"></div>
+          <span class="spacing-label">2XS-XS</span>
+      </div>
+      <div class="spacing-demo">
+          <div class="spacing-box" style="width: var(--space-xs-s);"></div>
+          <span class="spacing-label">XS-S</span>
+      </div>
+      <div class="spacing-demo">
+          <div class="spacing-box" style="width: var(--space-s-m);"></div>
+          <span class="spacing-label">S-M</span>
+      </div>
+      <div class="spacing-demo">
+          <div class="spacing-box" style="width: var(--space-m-l);"></div>
+          <span class="spacing-label">M-L</span>
+      </div>
+      <div class="spacing-demo">
+          <div class="spacing-box" style="width: var(--space-l-xl);"></div>
+          <span class="spacing-label">L-XL</span>
+      </div>
+      <div class="spacing-demo">
+          <div class="spacing-box" style="width: var(--space-xl-2xl);"></div>
+          <span class="spacing-label">XL-2XL</span>
+      </div>
+      <div class="spacing-demo">
+          <div class="spacing-box" style="width: var(--space-2xl-3xl);"></div>
+          <span class="spacing-label">2XL-3XL</span>
+      </div>
+      <div class="spacing-demo">
+          <div class="spacing-box" style="width: var(--space-3xl-4xl);"></div>
+          <span class="spacing-label">3XL-4XL</span>
+      </div>
+      <div class="spacing-demo">
+          <div class="spacing-box" style="width: var(--space-4xl-5xl);"></div>
+          <span class="spacing-label">4XL-5XL</span>
+      </div>
+      <div class="spacing-demo">
+          <div class="spacing-box" style="width: var(--space-s-l);"></div>
+          <span class="spacing-label">S-L</span>
+      </div>
+  </div>
+</section>
+
+<section>
+  <h2>Grid Layout</h2>
+  <div class="u-container grid-demo">
+    <div class="u-grid u-grid-12">
+      {Array(12).fill(0).map((_, i) => (
+        <div class="grid-demo-column">
+          {i + 1}
+        </div>
+      ))}
+    </div>
+  </div>
+
+
+  
+
+
+  </div>
+  <p>This demonstrates the 12-column grid within the container. Columns start and end at the container edges, with gutters only between columns.</p>
+  <ul>
+    <li>Container max width: var(--grid-max-width)</li>
+    <li>Number of columns: var(--grid-columns)</li>
+    <li>Gutter size: var(--grid-gutter)</li>
+    <li>Note: There are no gutters on the left and right edges of the container</li>
+  </ul>
+</section>
+<section>
+  <h2>Other Elements</h2>
+  <button>Button</button>
+  <a href="#">Link</a>
+  <ul>
+      <li>Unordered list item 1</li>
+      <li>Unordered list item 2</li>
+  </ul>
+  <ol>
+      <li>Ordered list item 1</li>
+      <li>Ordered list item 2</li>
+  </ol>
+</section>
+</BaseLayout>
