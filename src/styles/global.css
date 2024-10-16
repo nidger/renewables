@@ -1,60 +1,97 @@
-/* Fluid typography variables */
+/* Fluid typography and layout variables */
 :root {
-  --fluid-min-width: 320px;
-  --fluid-max-width: 1366px;
+  --fluid-min-width: 320;
+  --fluid-max-width: 1366;
+  --fluid-screen: 100vw;
+  --fluid-bp: calc(
+    (var(--fluid-screen) - var(--fluid-min-width) / 16 * 1rem) /
+      (var(--fluid-max-width) - var(--fluid-min-width))
+  );
 
   /* Typography */
-  --step--2: clamp(0.5628rem, 0.5411rem + 0.1082vw, 0.6331rem);
-  --step--1: clamp(0.7502rem, 0.7213rem + 0.1443vw, 0.844rem);
-  --step-0: clamp(1rem, 0.9615rem + 0.1923vw, 1.125rem);
-  --step-1: clamp(1.333rem, 1.2817rem + 0.2563vw, 1.4996rem);
-  --step-2: clamp(1.7769rem, 1.7085rem + 0.3417vw, 1.999rem);
-  --step-3: clamp(2.3686rem, 2.2775rem + 0.4555vw, 2.6647rem);
-  --step-4: clamp(3.1573rem, 3.0359rem + 0.6072vw, 3.552rem);
-  --step-5: clamp(4.2087rem, 4.0469rem + 0.8094vw, 4.7348rem);
-  --step-6: clamp(5.6102rem, 5.3945rem + 1.0789vw, 6.3115rem);
+  /* Step -2: 12.5px → 12.8px */
+  --step--2: clamp(1.25rem, 1.2408rem + 0.0287vw, 1.28rem);
 
-  /* New aggressively scaling large heading */
-  --step-large-aggressive: clamp(2.5rem, 1.5rem + 5vw, 6rem);
+  /* Step -1: 15px → 16px */
+  --step--1: clamp(1.5rem, 1.4694rem + 0.0956vw, 1.6rem);
 
-  /* Fluid spacing variables */
-  --space-3xs: clamp(0.25rem, 0.2308rem + 0.0962vw, 0.3125rem);
-  --space-2xs: clamp(0.5rem, 0.4808rem + 0.0962vw, 0.5625rem);
-  --space-xs: clamp(0.75rem, 0.7115rem + 0.1923vw, 0.875rem);
-  --space-s: clamp(1rem, 0.9615rem + 0.1923vw, 1.125rem);
-  --space-m: clamp(1.5rem, 1.4423rem + 0.2885vw, 1.6875rem);
-  --space-l: clamp(2rem, 1.9231rem + 0.3846vw, 2.25rem);
-  --space-xl: clamp(3rem, 2.8846rem + 0.5769vw, 3.375rem);
-  --space-2xl: clamp(4rem, 3.8462rem + 0.7692vw, 4.5rem);
-  --space-3xl: clamp(6rem, 5.7692rem + 1.1538vw, 6.75rem);
-  --space-4xl: clamp(8rem, 7.6923rem + 1.5385vw, 9rem);
-  --space-5xl: clamp(10rem, 9.6154rem + 1.9231vw, 11.25rem);
-  
+  /* Step 0: 18px → 20px */
+  --step-0: clamp(1.8rem, 1.7389rem + 0.1912vw, 2rem);
+
+  /* Step 1: 21.6px → 25px */
+  --step-1: clamp(2.16rem, 2.056rem + 0.325vw, 2.5rem);
+
+  /* Step 2: 25.92px → 31.25px */
+  --step-2: clamp(2.592rem, 2.429rem + 0.5096vw, 3.125rem);
+
+  /* Step 3: 31.104px → 39.0625px */
+  --step-3: clamp(3.1104rem, 2.8669rem + 0.7609vw, 3.90625rem);
+
+  /* Step 4: 37.3248px → 48.8281px */
+  --step-4: clamp(3.73248rem, 3.38064rem + 1.0997vw, 4.88281rem);
+
+  /* Step 5: 44.7898px → 61.0352px */
+  --step-5: clamp(4.47898rem, 3.98192rem + 1.5531vw, 6.10352rem);
+
+
+/* Spacing Variables */
+  /* Space 3xs: 5px → 5px */
+  --space-3xs: clamp(0.5rem, 0.5rem + 0vw, 0.5rem);
+  /* Space 2xs: 9px → 10px */
+  --space-2xs: clamp(0.9rem, 0.8694rem + 0.0956vw, 1rem);
+  /* Space xs: 14px → 15px */
+  --space-xs: clamp(1.4rem, 1.3694rem + 0.0956vw, 1.5rem);
+  /* Space s: 18px → 20px */
+  --space-s: clamp(1.8rem, 1.7389rem + 0.1912vw, 2rem);
+  /* Space m: 27px → 30px */
+  --space-m: clamp(2.7rem, 2.6082rem + 0.2868vw, 3rem);
+  /* Space l: 36px → 40px */
+  --space-l: clamp(3.6rem, 3.4776rem + 0.3824vw, 4rem);
+  /* Space xl: 54px → 60px */
+  --space-xl: clamp(5.4rem, 5.2165rem + 0.5736vw, 6rem);
+  /* Space 2xl: 72px → 80px */
+  --space-2xl: clamp(7.2rem, 6.9552rem + 0.7648vw, 8rem);
+  /* Space 3xl: 108px → 120px */
+  --space-3xl: clamp(10.8rem, 10.4329rem + 1.1472vw, 12rem);
+  /* Space 4xl: 162px → 180px */
+  --space-4xl: clamp(16.2rem, 15.6494rem + 1.7208vw, 18rem);
+  /* Space 5xl: 243px → 270px */
+  --space-5xl: clamp(24.3rem, 23.4741rem + 2.5812vw, 27rem);
+
   /* One-up pairs */
-  --space-3xs-2xs: clamp(0.25rem, 0.1538rem + 0.4808vw, 0.5625rem);
-  --space-2xs-xs: clamp(0.5rem, 0.3846rem + 0.5769vw, 0.875rem);
-  --space-xs-s: clamp(0.75rem, 0.6346rem + 0.5769vw, 1.125rem);
-  --space-s-m: clamp(1rem, 0.7885rem + 1.0577vw, 1.6875rem);
-  --space-m-l: clamp(1.5rem, 1.2692rem + 1.1538vw, 2.25rem);
-  --space-l-xl: clamp(2rem, 1.5769rem + 2.1154vw, 3.375rem);
-  --space-xl-2xl: clamp(3rem, 2.5385rem + 2.3077vw, 4.5rem);
-  --space-2xl-3xl: clamp(4rem, 3.1538rem + 4.2308vw, 6.75rem);
-  --space-3xl-4xl: clamp(6rem, 5.0769rem + 4.6154vw, 9rem);
-  --space-4xl-5xl: clamp(8rem, 6.9231rem + 5.3846vw, 11.25rem);
-  
+  /* Space 3xs-2xs: 5px → 10px */
+  --space-3xs-2xs: clamp(0.5rem, 0.347rem + 0.478vw, 1rem);
+  /* Space 2xs-xs: 9px → 15px */
+  --space-2xs-xs: clamp(0.9rem, 0.7165rem + 0.5736vw, 1.5rem);
+  /* Space xs-s: 14px → 20px */
+  --space-xs-s: clamp(1.4rem, 1.2165rem + 0.5736vw, 2rem);
+  /* Space s-m: 18px → 30px */
+  --space-s-m: clamp(1.8rem, 1.4329rem + 1.1472vw, 3rem);
+  /* Space m-l: 27px → 40px */
+  --space-m-l: clamp(2.7rem, 2.3022rem + 1.2428vw, 4rem);
+  /* Space l-xl: 36px → 60px */
+  --space-l-xl: clamp(3.6rem, 2.8658rem + 2.2945vw, 6rem);
+  /* Space xl-2xl: 54px → 80px */
+  --space-xl-2xl: clamp(5.4rem, 4.6046rem + 2.4857vw, 8rem);
+  /* Space 2xl-3xl: 72px → 120px */
+  --space-2xl-3xl: clamp(7.2rem, 5.7315rem + 4.5889vw, 12rem);
+  /* Space 3xl-4xl: 108px → 180px */
+  --space-3xl-4xl: clamp(10.8rem, 8.5987rem + 6.8834vw, 18rem);
+  /* Space 4xl-5xl: 162px → 270px */
+  --space-4xl-5xl: clamp(16.2rem, 12.898rem + 10.3251vw, 27rem);
+
   /* Custom pairs */
-  --space-s-l: clamp(1rem, 0.6154rem + 1.9231vw, 2.25rem);
+  /* Space s-l: 18px → 40px */
+  --space-s-l: clamp(1.8rem, 1.1269rem + 2.1033vw, 4rem);
 
   /* Color variables */
   --color-background-primary: #f1f5f9;
   --color-background-secondary: #ededed;
   --color-text: #000000;
-
   --color-dark-background-primary: #15151d;
   --color-dark-background-secondary: #1c1c2c;
   --color-dark-text-primary: #add4ec;
   --color-dark-text-secondary: #7f87dc;
-
   --color-hamburger-line: currentColor;
 
   /* Other variables */
@@ -69,15 +106,21 @@
   /* Layout */
   --content-max-width: 1366px;
 
-  /* New Grid variables */
+  /* Grid variables */
   --grid-max-width: var(--content-max-width);
-  --grid-gutter: var(--space-s-l);
   --grid-columns: 12;
+  
+  /* Grid gutter - using clamp for responsiveness */
+  --grid-gutter: clamp(1.8rem, 1.4329rem + 1.1472vw, 3rem); /* Equivalent to --space-s-m */
+  
+  /* Calculate column width */
+  --column-width: calc((var(--grid-max-width) - (var(--grid-columns) - 1) * var(--grid-gutter)) / var(--grid-columns));
 }
+
 
 /* Base styles */
 html {
-  font-size: 100%;  /* This ensures that 1rem = 16px */
+  font-size: 62.5%;  /* This ensures that 1rem = 10px */
   background-color: var(--color-background-primary);
   color: var(--color-text);
   font-family: var(--font-family-sans);
@@ -102,45 +145,37 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: var(--font-weight-bold);
 }
 
-h1 {
-  font-size: var(--step-large-aggressive);
-  margin: var(--space-s) 0;
+h1, .h1 {
+  font-size: var(--step-5);
+  line-height: 1.1;
+  margin: var(--space-m) 0;
 }
 
-h2 {
+h2, .h2 {
+  font-size: var(--step-4);
+  line-height: 1.2;
+}
+
+h3, .h3 {
   font-size: var(--step-3);
+  line-height: 1.2;
 }
 
-h3 {
+h4, .h4 {
   font-size: var(--step-2);
+  line-height: 1.3;
 }
 
-h4 {
+h5, .h5 {
   font-size: var(--step-1);
+  line-height: 1.4;
 }
 
-h5 {
+h6, .h6 {
   font-size: var(--step-0);
+  line-height: 1.5;
 }
 
-h6 {
-  font-size: var(--step--1);
-}
-
-small, .text-small {
-  font-size: var(--step--1);
-}
-
-.text-large {
-  font-size: var(--step-1);
-}
-
-/* New style for the aggressively scaling large heading */
-.heading-large-aggressive {
-  font-size: var(--step-large-aggressive);
-  line-height: var(--line-height-tight);
-  font-weight: var(--font-weight-bold);
-}
 
 /* Nav styling */
 header {
@@ -173,8 +208,8 @@ nav {
 
 .hamburger .line {
   display: block;
-  width: 1.4rem;
-  height: 2px;
+  width: var(--step-2);
+  height: 0.2rem;
   margin-bottom: var(--space-3xs);
   background-color: var(--color-hamburger-line);
 }
@@ -287,10 +322,11 @@ html.dark .hamburger:hover {
   }
 }
 
-/* New Grid utility classes */
+/* Grid utility classes */
 .u-container {
   max-width: var(--grid-max-width);
   margin-inline: auto;
+  /* Remove padding to allow full-width alignment */
 }
 
 .u-grid {
@@ -299,5 +335,12 @@ html.dark .hamburger:hover {
 }
 
 .u-grid-12 {
-  grid-template-columns: repeat(var(--grid-columns), 1fr);
+  grid-template-columns: repeat(var(--grid-columns), minmax(0, 1fr));
+}
+
+/* New utility class for edge-to-edge alignment */
+.u-grid-full-width {
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
 }
