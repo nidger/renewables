@@ -1,7 +1,7 @@
 /* Fluid typography and layout variables */
 :root {
   --fluid-min-width: 320;
-  --fluid-max-width: 1366;
+  --fluid-max-width: 1440;
   --fluid-screen: 100vw;
   --fluid-bp: calc(
     (var(--fluid-screen) - var(--fluid-min-width) / 16 * 1rem) /
@@ -104,7 +104,7 @@
   --font-weight-bold: 700;
 
   /* Layout */
-  --content-max-width: 1366px;
+  --content-max-width: 1440px;
 
   /* Grid variables */
   --grid-max-width: var(--content-max-width);
@@ -322,21 +322,15 @@ html.dark .hamburger:hover {
   }
 }
 
-/* Grid utility classes */
-.u-container {
+/*grid utility classes*/
+.u-grid {
   max-width: var(--grid-max-width);
   margin-inline: auto;
-  /* Remove padding to allow full-width alignment */
-}
-
-.u-grid {
   display: grid;
   gap: var(--grid-gutter);
-}
-
-.u-grid-12 {
   grid-template-columns: repeat(var(--grid-columns), minmax(0, 1fr));
 }
+
 
 /* New utility class for edge-to-edge alignment */
 .u-grid-full-width {
