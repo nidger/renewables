@@ -3,10 +3,16 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 const pageTitle = "Grid Test"
 ---
 <BaseLayout PageTitle:{pageTitle}>
-  <p>
-    This is where we are going to do some grid work.<br>
-    First, lets get a section and a container up and running.
-  </p>
+  <section>
+    <div class="container">
+      <h1>{pageTitle}</h1>
+      <p>
+        This is where we are going to do some grid work.<br>
+        First, lets get a section and a container up and running.
+      </p>
+    </div>
+  </section>
+  
 
   <section>
     <header class="container u-grid">
@@ -39,23 +45,9 @@ const pageTitle = "Grid Test"
     </div>
   </section>
 
-  <section class="flex-section">
-    <div class="container flex-container">
-      <div class="flex-item-1">
-        <p>flex item 1</p>
-      </div>
-      <div class="flex-item-2">
-        <p>flex item 2</p>
-      </div>
-
-    </div>
-
-  </section>
-
-  <style>
-
   
 
+  <style>
     .logo {
       grid-column: 1/4;
     }
@@ -72,7 +64,6 @@ const pageTitle = "Grid Test"
         }
     
     .grid-section {
-      background-color: pink;
       padding-top: var(--space-l);
       padding-bottom: var(--space-l);
     }
@@ -81,7 +72,7 @@ const pageTitle = "Grid Test"
     .grid-item-1 {
       height: 100%;
       background-color: blueviolet;
-      grid-column: 2/8;
+      grid-column: 1/8;
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -91,7 +82,7 @@ const pageTitle = "Grid Test"
 
     .grid-item-2 {
       background-color: rgb(43, 226, 192);
-      grid-column: 8/11;
+      grid-column: 8/13;
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -101,7 +92,7 @@ const pageTitle = "Grid Test"
 
     .grid-item-3 {
       background-color: rgb(226, 43, 104);
-      grid-column: 3/5;
+      grid-column: 1/13;
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -111,14 +102,13 @@ const pageTitle = "Grid Test"
 
     .grid-item-4 {
       background-color: rgb(226, 183, 43);
-      height: 14rem;
-      grid-column: 10/13;
+      height: 20rem;
+      grid-column: 5/13;
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
       padding: var(--space-s);
-      align-self: end;
     }
 
     .grid-item-text {
@@ -131,28 +121,7 @@ const pageTitle = "Grid Test"
       padding-top: var(--space-l);
       padding-bottom: var(--space-l);
     }
-
-    .flex-container {
-      display: flex;
-      gap: var(--grid-gutter);
-    }
-
-    .flex-item-1 {
-      padding: var(--space-s);
-      background-color: rgb(199, 232, 150);
-      width: 50%;
-      
-    }
-
-    .flex-item-2 {
-      padding: var(--space-s);
-      background-color: rgb(150, 167, 232);
-    }
-
-
-    
   </style>
-
 </BaseLayout>
 
 
