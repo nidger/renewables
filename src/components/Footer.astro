@@ -4,9 +4,29 @@ const username = "withastro";
 import Social from './Social.astro';
 ---
 
-<footer class="container">
-  <p>Learn more about my projects on <a href={`https://www.${platform}.com/${username}`}>{platform}</a>!</p>
-  <Social platform="Github" username="withastro" />
-  <Social platform="Twitter" username="astrodotbuild" />
-  <Social platform="Youtube" username="astrodotbuild" />
-</footer>
+<section>
+  <div class="container">
+    <div class="footer">
+      <p class="footer-text">Learn more about my projects on <a href={`https://www.${platform}.com/${username}`}>{platform}</a>!</p>
+      <Social platform="Github" username="withastro" />
+      <Social platform="Twitter" username="astrodotbuild" />
+      <Social platform="Youtube" username="astrodotbuild" />
+    </div> 
+  </div> 
+</section>
+
+<style>
+  .footer {
+    margin-top: var(--space-s);
+    background-color: rgb(240, 240, 240);
+    padding: var(--space-3xs) var(--space-s) var(--space-s);
+  }
+
+  .footer p {
+    font-size: var(--step--1);
+  }
+
+
+</style>
+
+

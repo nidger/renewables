@@ -151,7 +151,7 @@ header {
   position: absolute;
   top: 0;
   right: 0;
-}
+} 
 
 nav {
   display: flex;
@@ -211,12 +211,6 @@ nav {
   display: unset;
 }
 
-/* Footer styles */
-footer {
-  background-color: var(--color-background-secondary);
-  padding: var(--space-3xs) var(--space-s) var(--space-s) var(--space-s);
-  margin-top: var(--space-s);
-}
 
 /* Dark mode styling */
 html.dark {
