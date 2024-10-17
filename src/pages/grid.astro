@@ -115,12 +115,13 @@ const pageTitle = "Grid Test"
       color: oldlace;
     }
 
-    .flex-section {
-      height: 30rem;
-      background-color: rgb(155, 255, 255);
-      padding-top: var(--space-l);
-      padding-bottom: var(--space-l);
+    @media (max-width: 636px) {
+      .grid-item-1 { grid-column: 1 / span 13; }
+      .grid-item-2 { grid-column: 1 / span 13; }
+      .grid-item-3 { grid-column: 1 / span 13; }
+      .grid-item-4 { grid-column: 1 / span 13; }
     }
+  
   </style>
 </BaseLayout>
 
