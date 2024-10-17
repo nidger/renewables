@@ -296,9 +296,6 @@ html.dark .hamburger:hover {
 .u-grid {
   display: grid;
   gap: var(--grid-gutter);
-}
-
-.u-grid-12 {
   grid-template-columns: repeat(var(--grid-columns), minmax(0, 1fr));
 }
 
