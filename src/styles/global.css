@@ -1,7 +1,7 @@
 /* Fluid typography and layout variables */
 :root {
   --container-min-width: 320;
-  --container-max-width: 1366;
+  --container-max-width: 1100;
   --fluid-screen: 100vw;
   --fluid-bp: calc(
     (var(--fluid-screen) - var(--container-min-width) / 16 * 1rem) /
@@ -67,7 +67,7 @@
   --letter-spacing-1: 1px;
 
   /* Layout */
-  --content-max-width: 1366px;
+  --content-max-width: 1100px;
 
   /* Grid variables */
   --grid-max-width: var(--content-max-width);

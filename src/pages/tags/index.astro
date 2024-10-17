@@ -8,11 +8,17 @@ const pageTitle = "Tag Index";
 ---
 
 <BaseLayout pageTitle={pageTitle}>
-  <div class="tags">
-    {tags.map((tag) => (
-      <Tag tag={tag} />  // Use the Tag component here
-    ))}
-  </div>
+  <section>
+    <div class="container">
+      <h1>{pageTitle}</h1>
+      <div class="tags">
+        {tags.map((tag) => (
+          <Tag tag={tag} />  // Use the Tag component here
+        ))}
+      </div>
+    </div>
+  </section>
+
 </BaseLayout>
 
 <style>
