@@ -18,9 +18,13 @@ import Social from './Social.astro';
 <style>
   .footer {
     margin-top: var(--space-s);
-    background-color: rgb(240, 240, 240);
+    background-color: var(--color-background-secondary);
     padding: var(--space-3xs) var(--space-s) var(--space-s);
   }
+
+  html.dark .footer {
+  background-color: var(--color-dark-background-secondary);
+}
 
   .footer p {
     font-size: var(--step--1);
