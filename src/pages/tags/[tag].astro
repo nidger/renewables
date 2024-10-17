@@ -21,15 +21,21 @@ const { tag } = Astro.params;
 const { posts, tags } = Astro.props;
 ---
 <BaseLayout pageTitle={tag}>
-  <p>Posts tagged with {tag}</p>
-  <ul>
-    {posts.map((post) => <BlogPost url={post.url} title={post.frontmatter.title}/>)}
-  </ul>
-  <div class="tags">
-    {tags.map((tag) => (
-      <TagComponent tag={tag} />
-    ))}
-  </div>
+  <section>
+    <div class="container">
+      <h1>{tag}</h1>
+      <p>Posts tagged with {tag}</p>
+      <ul>
+        {posts.map((post) => <BlogPost url={post.url} title={post.frontmatter.title}/>)}
+      </ul>
+      <div class="tags">
+        {tags.map((tag) => (
+          <TagComponent tag={tag} />
+        ))}
+      </div>
+    </div>
+  </section>
+  
 </BaseLayout>
 <style>
   .tags {

@@ -3,8 +3,9 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 const pageTitle = "Style Guide";
 ---
 
-<BaseLayout pageTitle={pageTitle}>
-<p>This is a visual representation of the styles in use on this website.<br>Hope it helps!</p>
+<BaseLayout >
+
+
 <style>
   .color-swatches, .spacing-demos {
       display: flex;
@@ -55,8 +56,17 @@ const pageTitle = "Style Guide";
 </style>
 
 <section>
-  <h2>Colors</h2>
-  <div class="color-swatches">
+  <div class="container">
+    <h1>{pageTitle}</h1>
+    <p>This is a visual representation of the styles in use on this website.<br>Hope it helps!</p>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <h2>Colors</h2>
+  </div>
+  <div class="container color-swatches">
       <div class="color-swatch" style="background-color: var(--color-background-primary);">
           <span>Background Primary</span>
       </div>
@@ -82,20 +92,28 @@ const pageTitle = "Style Guide";
 </section>
 
 <section>
-  <h2>Typography</h2>
-  <h1>Heading 1</h1>
-  <h2>Heading 2</h2>
-  <h3>Heading 3</h3>
-  <h4>Heading 4</h4>
-  <h5>Heading 5</h5>
-  <h6>Heading 6</h6>
-  <p>Regular paragraph text</p>
-  <p><small>Small text</small></p>
+  <div class="container">
+    <h2>Typography</h2>
+  </div>
+  <div class="container">
+    <h1>Heading 1</h1>
+    <h2>Heading 2</h2>
+    <h3>Heading 3</h3>
+    <h4>Heading 4</h4>
+    <h5>Heading 5</h5>
+    <h6>Heading 6</h6>
+    <p>Regular paragraph text</p>
+    <p><small>Small text</small></p>
+  </div>
+
 </section>
 
 <section>
-  <h2>Spacing</h2>
-  <div class="spacing-demos">
+  <div class="container">
+    <h2>Spacing</h2>
+  </div>
+  <div class="container">
+    <div class="spacing-demos">
       <div class="spacing-demo">
           <div class="spacing-box" style="width: var(--space-3xs);"></div>
           <span class="spacing-label">3XS</span>
@@ -141,11 +159,16 @@ const pageTitle = "Style Guide";
           <span class="spacing-label">5XL</span>
       </div>
   </div>
+  </div>
+  
 </section>
 
 <section>
-  <h2>Custom Spacing Pairs</h2>
-  <div class="spacing-demos">
+  <div class="container">
+    <h2>Custom Spacing Pairs</h2>
+  </div>
+  <div class="container">
+    <div class="spacing-demos">
       <div class="spacing-demo">
           <div class="spacing-box" style="width: var(--space-3xs-2xs);"></div>
           <span class="spacing-label">3XS-2XS</span>
@@ -192,38 +215,45 @@ const pageTitle = "Style Guide";
       </div>
   </div>
 </section>
+<section>
+  <div class="container">
+    <h2>Grid Layout</h2>
+  </div>
+  <div class="container">
+    <div class="grid-demo">
+      <div class="u-grid u-grid-12">
+        {Array(12).fill(0).map((_, i) => (
+          <div class="grid-demo-column">
+            {i + 1}
+          </div>
+        ))}
+      </div>
+    </div>
+    <p>This demonstrates the 12-column grid within the container. Columns start and end at the container edges, with gutters only between columns.</p>
+    <ul>
+      <li>Container max width: var(--grid-max-width)</li>
+      <li>Number of columns: var(--grid-columns)</li>
+      <li>Gutter size: var(--grid-gutter)</li>
+      <li>Note: There are no gutters on the left and right edges of the container</li>
+    </ul> 
+  </div>
+</section>
 
 <section>
-  <h2>Grid Layout</h2>
-  <div class="u-container grid-demo">
-    <div class="u-grid u-grid-12">
-      {Array(12).fill(0).map((_, i) => (
-        <div class="grid-demo-column">
-          {i + 1}
-        </div>
-      ))}
-    </div>
+  <div class="container">
+    <h2>Other Elements</h2>
   </div>
-  </div>
-  <p>This demonstrates the 12-column grid within the container. Columns start and end at the container edges, with gutters only between columns.</p>
-  <ul>
-    <li>Container max width: var(--grid-max-width)</li>
-    <li>Number of columns: var(--grid-columns)</li>
-    <li>Gutter size: var(--grid-gutter)</li>
-    <li>Note: There are no gutters on the left and right edges of the container</li>
-  </ul>
-</section>
-<section>
-  <h2>Other Elements</h2>
-  <button>Button</button>
-  <a href="#">Link</a>
-  <ul>
+  <div class="container">
+    <button>Button</button>
+    <a href="#">Link</a>
+    <ul>
       <li>Unordered list item 1</li>
       <li>Unordered list item 2</li>
-  </ul>
-  <ol>
+    </ul>
+    <ol>
       <li>Ordered list item 1</li>
       <li>Ordered list item 2</li>
-  </ol>
+    </ol>
+  </div>
 </section>
 </BaseLayout>

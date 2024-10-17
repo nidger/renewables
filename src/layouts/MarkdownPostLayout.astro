@@ -4,14 +4,18 @@ import Tag from '../components/Tag.astro';
 const { frontmatter } = Astro.props;
 ---
 <BaseLayout pageTitle={frontmatter.title}>
-<p><strong>Published on:</strong> {frontmatter.pubDate.toString().slice(0,10)}</p>
-<p><strong>Written by:</strong> {frontmatter.author}</p>
-<p><strong>Description:</strong> <em>{frontmatter.description}</em></p>
-
-<slot />
-<div class="tags">
-  {frontmatter.tags.map((tag) => (
-    <Tag tag={tag} />
-  ))}
-</div>
+<section>
+  <div class="container">
+    <h1>{frontmatter.title}</h1>
+    <p><strong>Published on:</strong> {frontmatter.pubDate.toString().slice(0,10)}</p>
+    <p><strong>Written by:</strong> {frontmatter.author}</p>
+    <p><strong>Description:</strong> <em>{frontmatter.description}</em></p>
+    <slot />
+    <div class="tags">
+      {frontmatter.tags.map((tag) => (
+        <Tag tag={tag} />
+      ))}
+    </div>
+  </div>
+</section>
 </BaseLayout>

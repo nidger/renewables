@@ -1,87 +1,49 @@
 /* Fluid typography and layout variables */
 :root {
-  --fluid-min-width: 320;
-  --fluid-max-width: 1366;
+  --container-min-width: 320;
+  --container-max-width: 1100;
   --fluid-screen: 100vw;
   --fluid-bp: calc(
-    (var(--fluid-screen) - var(--fluid-min-width) / 16 * 1rem) /
-      (var(--fluid-max-width) - var(--fluid-min-width))
+    (var(--fluid-screen) - var(--container-min-width) / 16 * 1rem) /
+      (var(--container-max-width) - var(--container-min-width))
   );
 
   /* Typography */
-  /* Step -2: 12.5px → 12.8px */
   --step--2: clamp(1.25rem, 1.2408rem + 0.0287vw, 1.28rem);
-
-  /* Step -1: 15px → 16px */
   --step--1: clamp(1.5rem, 1.4694rem + 0.0956vw, 1.6rem);
-
-  /* Step 0: 18px → 20px */
   --step-0: clamp(1.8rem, 1.7389rem + 0.1912vw, 2rem);
-
-  /* Step 1: 21.6px → 25px */
   --step-1: clamp(2.16rem, 2.056rem + 0.325vw, 2.5rem);
-
-  /* Step 2: 25.92px → 31.25px */
   --step-2: clamp(2.592rem, 2.429rem + 0.5096vw, 3.125rem);
-
-  /* Step 3: 31.104px → 39.0625px */
   --step-3: clamp(3.1104rem, 2.8669rem + 0.7609vw, 3.90625rem);
-
-  /* Step 4: 37.3248px → 48.8281px */
   --step-4: clamp(3.73248rem, 3.38064rem + 1.0997vw, 4.88281rem);
-
-  /* Step 5: 44.7898px → 61.0352px */
   --step-5: clamp(4.47898rem, 3.98192rem + 1.5531vw, 6.10352rem);
 
-
-/* Spacing Variables */
-  /* Space 3xs: 5px → 5px */
+  /* Spacing Variables */
   --space-3xs: clamp(0.5rem, 0.5rem + 0vw, 0.5rem);
-  /* Space 2xs: 9px → 10px */
   --space-2xs: clamp(0.9rem, 0.8694rem + 0.0956vw, 1rem);
-  /* Space xs: 14px → 15px */
   --space-xs: clamp(1.4rem, 1.3694rem + 0.0956vw, 1.5rem);
-  /* Space s: 18px → 20px */
   --space-s: clamp(1.8rem, 1.7389rem + 0.1912vw, 2rem);
-  /* Space m: 27px → 30px */
   --space-m: clamp(2.7rem, 2.6082rem + 0.2868vw, 3rem);
-  /* Space l: 36px → 40px */
   --space-l: clamp(3.6rem, 3.4776rem + 0.3824vw, 4rem);
-  /* Space xl: 54px → 60px */
   --space-xl: clamp(5.4rem, 5.2165rem + 0.5736vw, 6rem);
-  /* Space 2xl: 72px → 80px */
   --space-2xl: clamp(7.2rem, 6.9552rem + 0.7648vw, 8rem);
-  /* Space 3xl: 108px → 120px */
   --space-3xl: clamp(10.8rem, 10.4329rem + 1.1472vw, 12rem);
-  /* Space 4xl: 162px → 180px */
   --space-4xl: clamp(16.2rem, 15.6494rem + 1.7208vw, 18rem);
-  /* Space 5xl: 243px → 270px */
   --space-5xl: clamp(24.3rem, 23.4741rem + 2.5812vw, 27rem);
 
   /* One-up pairs */
-  /* Space 3xs-2xs: 5px → 10px */
   --space-3xs-2xs: clamp(0.5rem, 0.347rem + 0.478vw, 1rem);
-  /* Space 2xs-xs: 9px → 15px */
   --space-2xs-xs: clamp(0.9rem, 0.7165rem + 0.5736vw, 1.5rem);
-  /* Space xs-s: 14px → 20px */
   --space-xs-s: clamp(1.4rem, 1.2165rem + 0.5736vw, 2rem);
-  /* Space s-m: 18px → 30px */
   --space-s-m: clamp(1.8rem, 1.4329rem + 1.1472vw, 3rem);
-  /* Space m-l: 27px → 40px */
   --space-m-l: clamp(2.7rem, 2.3022rem + 1.2428vw, 4rem);
-  /* Space l-xl: 36px → 60px */
   --space-l-xl: clamp(3.6rem, 2.8658rem + 2.2945vw, 6rem);
-  /* Space xl-2xl: 54px → 80px */
   --space-xl-2xl: clamp(5.4rem, 4.6046rem + 2.4857vw, 8rem);
-  /* Space 2xl-3xl: 72px → 120px */
   --space-2xl-3xl: clamp(7.2rem, 5.7315rem + 4.5889vw, 12rem);
-  /* Space 3xl-4xl: 108px → 180px */
   --space-3xl-4xl: clamp(10.8rem, 8.5987rem + 6.8834vw, 18rem);
-  /* Space 4xl-5xl: 162px → 270px */
   --space-4xl-5xl: clamp(16.2rem, 12.898rem + 10.3251vw, 27rem);
 
   /* Custom pairs */
-  /* Space s-l: 18px → 40px */
   --space-s-l: clamp(1.8rem, 1.1269rem + 2.1033vw, 4rem);
 
   /* Color variables */
@@ -102,25 +64,21 @@
   --font-weight-normal: 400;
   --font-weight-medium: 500;
   --font-weight-bold: 700;
+  --letter-spacing-1: 1px;
 
   /* Layout */
-  --content-max-width: 1366px;
+  --content-max-width: 1100px;
 
   /* Grid variables */
   --grid-max-width: var(--content-max-width);
   --grid-columns: 12;
-  
-  /* Grid gutter - using clamp for responsiveness */
-  --grid-gutter: clamp(1.8rem, 1.4329rem + 1.1472vw, 3rem); /* Equivalent to --space-s-m */
-  
-  /* Calculate column width */
+  --grid-gutter: clamp(1.8rem, 1.4329rem + 1.1472vw, 3rem);
   --column-width: calc((var(--grid-max-width) - (var(--grid-columns) - 1) * var(--grid-gutter)) / var(--grid-columns));
 }
 
-
 /* Base styles */
 html {
-  font-size: 62.5%;  /* This ensures that 1rem = 10px */
+  font-size: 62.5%;
   background-color: var(--color-background-primary);
   color: var(--color-text);
   font-family: var(--font-family-sans);
@@ -129,14 +87,22 @@ html {
 
 body {
   font-size: var(--step-0);
-  margin: 0 auto;
+  margin: 0;
   width: 100%;
-  max-width: var(--content-max-width);
-  padding: var(--space-s);
 }
 
 * {
   box-sizing: border-box;
+}
+
+/* Container for main content */
+.container {
+  width: 100%;
+  max-width: var(--content-max-width);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--space-s);
+  padding-right: var(--space-s);
 }
 
 /* Typography styles */
@@ -176,17 +142,18 @@ h6, .h6 {
   line-height: 1.5;
 }
 
-
 /* Nav styling */
 header {
-  position: relative;
   margin-bottom: var(--space-xl);
 }
 
 .header-buttons {
   position: absolute;
-  top: 0;
-  right: 0;
+  top: var(--space-s);
+  right: var(--space-s);
+  display: flex;
+  align-items: center;
+  gap: var(--space-2xs);
 }
 
 nav {
@@ -231,14 +198,13 @@ nav {
 .nav-links a {
   display: block;
   text-align: center;
-  padding: var(--space-xs) 0;
   text-decoration: none;
-  font-size: var(--step-0);
-  font-weight: var(--font-weight-bold);
+  font-size: var(--step--1);
+  letter-spacing: var(--letter-spacing-1);
+  font-weight: var(--font-weight-medium);
   text-transform: uppercase;
 }
 
-.nav-links a:hover,
 .nav-links a:focus {
   background-color: var(--color-background-secondary);
 }
@@ -247,12 +213,6 @@ nav {
   display: unset;
 }
 
-/* Footer styles */
-footer {
-  background-color: var(--color-background-secondary);
-  padding: var(--space-3xs) var(--space-s) var(--space-s) var(--space-s);
-  margin-top: var(--space-s);
-}
 
 /* Dark mode styling */
 html.dark {
@@ -264,9 +224,7 @@ html.dark {
   color: var(--color-dark-text-primary);
 }
 
-html.dark footer {
-  background-color: var(--color-dark-background-secondary);
-}
+
 
 html.dark a {
   color: var(--color-dark-text-secondary);
@@ -293,6 +251,7 @@ html.dark .hamburger:hover {
 @media screen and (min-width: 636px) {
   header {
     margin-bottom: 0;
+    position: relative;
   }
 
   nav {
@@ -302,15 +261,20 @@ html.dark .hamburger:hover {
   }
 
   .nav-links {
-    display: block;
+    display: flex;
+    gap: var(--space-l);
     position: static;
     width: auto;
     background: none;
+    padding-top: var(--space-s);
   }
 
   .nav-links a {
     display: inline-block;
-    padding: var(--space-xs) var(--space-s);
+  }
+
+  .header-buttons {
+    top: 0;
   }
 
   .hamburger {
@@ -324,9 +288,9 @@ html.dark .hamburger:hover {
 
 /* Grid utility classes */
 .u-container {
-  max-width: var(--grid-max-width);
+  max-width: var(--content-max-width);
   margin-inline: auto;
-  /* Remove padding to allow full-width alignment */
+  padding-inline: var(--space-s);
 }
 
 .u-grid {
@@ -338,8 +302,8 @@ html.dark .hamburger:hover {
   grid-template-columns: repeat(var(--grid-columns), minmax(0, 1fr));
 }
 
-/* New utility class for edge-to-edge alignment */
-.u-grid-full-width {
+/* Utility class for full-width elements */
+.u-full-width {
   width: 100vw;
   margin-left: calc(50% - 50vw);
   margin-right: calc(50% - 50vw);
