@@ -1,0 +1,38 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+const pageTitle = "Images";
+import { Image, Picture, getImage } from "astro:assets";
+import srcImage from '../assets/image-1.jpg';
+import largeImage from '../assets/large-image.jpg'
+//getImage()
+---
+
+<BaseLayout>
+  <section>
+    <div class="container">
+      <h1>{pageTitle}</h1>
+      <p>On this page we are going to look at images on Astro</p>
+      
+       <!-- <img src="/public.jpg" />
+       <Image src="/public.jpg" alt="cool shot" width={400} height={520}/> -->
+       <!-- src -->
+       <!-- <img src={srcImage.src} />
+       <Image src={srcImage} width="400" height="520" alt="cool shot" /> -->
+
+       <!-- <img src={largeImage.src} /> -->
+       <Picture
+        src={largeImage} alt="cool shot"
+        width= {1600} 
+        format="avif" 
+        />
+       
+
+      <!-- <Image />
+      <Picture /> -->
+
+    </div>
+
+   
+  </section>
+
+</BaseLayout>
