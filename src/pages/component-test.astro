@@ -1,0 +1,45 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Card from "../components/Card.astro";
+const pageTitle = "Component Test"
+---
+<BaseLayout PageTitle:{pageTitle}>
+  <section>
+    <div class="container">
+      <h1>{pageTitle}</h1>
+    </div>
+  </section>
+
+  <section class="component-section">
+    <div class="container component-container u-grid">
+      <Card
+        href="/about"
+        title="About"
+        body="here is some body text that nobody will read but we'll put it in anyway"
+      />
+      <Card
+        href="/contact"
+        title="Contact"
+        body="here is some body text that nobody will read but we'll put it in anyway"
+      />
+      <Card
+      href="/contact"
+      title="Contact"
+      body="here is some body text that nobody will read but we'll put it in anyway"
+    />
+    <Card
+    href="/contact"
+    title="Contact"
+    body="here is some body text that nobody will read but we'll put it in anyway"
+  />
+  <Card
+    href="/contact"
+    title="Contact"
+    body="here is some body text that nobody will read but we'll put it in anyway"
+  />
+      </div>
+
+   
+
+  </section>
+</BaseLayout>
