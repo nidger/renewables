@@ -1,0 +1,20 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+const pageTitle = "Images";
+import { Image } from "astro:assets";
+import firstImage from '../assets/image-1.jpg';
+---
+
+<BaseLayout>
+  <section>
+    <div class="container">
+      <h1>{pageTitle}</h1>
+      <p>On this page we are going to look at images on Astro</p>
+      <img src={firstImage.src} alt="cool shot">
+      <Image />
+    </div>
+
+    <img src="" alt="">
+  </section>
+
+</BaseLayout>
